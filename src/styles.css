@@ -2,13 +2,7 @@
    Сабина · Қыз ұзату — React-копия Тильды
    Палитра: 3 цвета — бежевый фон · золотой · бордовый
    ============================================================ */
-@font-face {
-  font-family: 'KZCarolina';
-  src: url('/fonts/KZCarolina-Regular.woff') format('woff');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* @font-face injected dynamically in main.tsx with correct BASE_URL */
 
 :root {
   /* 3 основных цвета */

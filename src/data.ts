@@ -86,5 +86,5 @@ export const invitation: Invitation = {
     { type: 'instagram', label: 'Instagram', value: '@aitzhanova.1', href: 'https://www.instagram.com/aitzhanova.1' },
   ],
 
-  musicSrc: '/music.mp3',
+  musicSrc: `${import.meta.env.BASE_URL}music.mp3`,
 }

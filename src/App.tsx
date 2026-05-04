@@ -42,16 +42,16 @@ export default function App() {
     <div className="page" ref={ref}>
       {/* Большие декоративные круги по краям — начинаются НИЖЕ hero */}
       <div className="side-orn side-orn-2" aria-hidden="true">
-        <img src="/img/tilda/big-orn-4.webp" alt="" />
+        <img src={`${import.meta.env.BASE_URL}img/tilda/big-orn-4.webp`} alt="" />
       </div>
       <div className="side-orn side-orn-3" aria-hidden="true">
-        <img src="/img/tilda/big-orn-3.webp" alt="" />
+        <img src={`${import.meta.env.BASE_URL}img/tilda/big-orn-3.webp`} alt="" />
       </div>
       <div className="side-orn side-orn-4" aria-hidden="true">
-        <img src="/img/tilda/big-orn-4.webp" alt="" />
+        <img src={`${import.meta.env.BASE_URL}img/tilda/big-orn-4.webp`} alt="" />
       </div>
       <div className="side-orn side-orn-5" aria-hidden="true">
-        <img src="/img/tilda/big-orn-3.webp" alt="" />
+        <img src={`${import.meta.env.BASE_URL}img/tilda/big-orn-3.webp`} alt="" />
       </div>
 
       <MusicPlayer src={invitation.musicSrc} />
@@ -69,7 +69,7 @@ export default function App() {
       <Rsvp data={invitation} />
       <footer className="footer reveal">
         <div className="footer-orn" aria-hidden="true">
-          <img src="/img/tilda/big-orn-3.webp" alt="" />
+          <img src={`${import.meta.env.BASE_URL}img/tilda/big-orn-3.webp`} alt="" />
         </div>
         <p className="footer-tagline">Разработка приглашений</p>
         <p className="footer-brand">&mdash;&nbsp;Invite to Event&nbsp;&mdash;</p>
