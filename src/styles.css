@@ -1,0 +1,762 @@
+/* ============================================================
+   Сабина · Қыз ұзату — React-копия Тильды
+   Палитра: 3 цвета — бежевый фон · золотой · бордовый
+   ============================================================ */
+@font-face {
+  font-family: 'KZCarolina';
+  src: url('/fonts/KZCarolina-Regular.woff') format('woff');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* 3 основных цвета */
+  --beige: #fbf6ec;
+  --beige-2: #f3e8cf;
+  --gold: #b28b33;
+  --gold-2: #c9a86a;
+  --rose: #7a1f2b;
+  --rose-2: #5a141d;
+
+  /* алиасы */
+  --paper: var(--beige);
+  --paper-2: var(--beige-2);
+  --paper-3: var(--beige);
+  --gold-soft: var(--gold);
+  --gold-deep: var(--gold);
+  --ink: var(--rose);
+  --ink-soft: var(--rose);
+  --shadow: 0 10px 40px rgba(122, 31, 43, 0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { background: var(--paper); }
+
+body {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-weight: 400;
+  color: var(--rose);
+  -webkit-font-smoothing: antialiased;
+  background: var(--beige);
+  min-height: 100vh;
+}
+
+img { max-width: 100%; display: block; }
+
+.page {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--beige);
+  background-image:
+    radial-gradient(ellipse at 50% -10%, rgba(178, 139, 51, 0.10), transparent 60%),
+    radial-gradient(ellipse at 50% 110%, rgba(122, 31, 43, 0.06), transparent 60%);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 1.1s cubic-bezier(.19,1,.22,1), transform 1.1s cubic-bezier(.19,1,.22,1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ============================================================
+   Большие декоративные круги-орнаменты по краям (как в Тильде).
+   Позиционируются абсолютно внутри .page, частично уходят
+   за край экрана и медленно вращаются.
+   ============================================================ */
+.side-orn {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  filter: drop-shadow(0 4px 14px rgba(178, 139, 51, 0.18));
+}
+.side-orn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: tilda-rotate 28s linear infinite;
+  transform-origin: center;
+}
+.side-orn-1 {
+  top: -120px;
+  right: -180px;
+  width: 420px;
+  height: 420px;
+}
+.side-orn-2 {
+  top: 700px;
+  left: -200px;
+  width: 460px;
+  height: 460px;
+}
+.side-orn-2 img { animation-duration: 32s; animation-direction: reverse; }
+.side-orn-3 {
+  top: 1700px;
+  right: -220px;
+  width: 480px;
+  height: 480px;
+}
+.side-orn-3 img { animation-duration: 36s; }
+.side-orn-4 {
+  top: 2700px;
+  left: -200px;
+  width: 440px;
+  height: 440px;
+}
+.side-orn-4 img { animation-duration: 30s; animation-direction: reverse; }
+.side-orn-5 {
+  top: 3800px;
+  right: -200px;
+  width: 420px;
+  height: 420px;
+}
+.side-orn-5 img { animation-duration: 34s; }
+
+/* Контент должен быть выше декораций */
+.hero, .section, .footer { position: relative; z-index: 1; }
+
+/* ============================================================
+   Декоративные разделители между секциями
+   ============================================================ */
+.sep {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding: 6px 24px;
+  gap: 0;
+}
+.sep-line {
+  flex: 1;
+  height: 1px;
+}
+.sep-line-l {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(178,139,51,0.18) 30%,
+    rgba(178,139,51,0.5) 100%
+  );
+}
+.sep-line-r {
+  background: linear-gradient(90deg,
+    rgba(178,139,51,0.5) 0%,
+    rgba(178,139,51,0.18) 70%,
+    transparent 100%
+  );
+}
+.sep-motif {
+  color: var(--gold);
+  width: 72px;
+  height: 24px;
+  flex-shrink: 0;
+  margin: 0 4px;
+  opacity: 0.82;
+}
+
+@media (max-width: 600px) {
+  .side-orn-1 { width: 320px; height: 320px; right: -140px; top: -90px; }
+  .side-orn-2 { width: 340px; height: 340px; left: -160px; top: 620px; }
+  .side-orn-3 { width: 360px; height: 360px; right: -180px; top: 1600px; }
+  .side-orn-4 { width: 320px; height: 320px; left: -160px; top: 2500px; }
+  .side-orn-5 { width: 320px; height: 320px; right: -160px; top: 3500px; }
+}
+
+/* ============================================================
+   HERO — фото с вшитым орнаментом и белым прямоугольником.
+   Наш вращающийся орнамент накрывает статичный.
+   Текст точно попадает в белый прямоугольник.
+   ============================================================ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--beige);
+  /* арочный обрез снизу: фото плавно перетекает в фон без цветового стыка */
+  border-radius: 0 0 50% 50% / 0 0 72px 72px;
+}
+
+.hero-stage {
+  position: relative;
+  /* высота = высота фото в натуральном соотношении (фото ~470×880) */
+  /* На мобильном 480px ширина → высота ≈ 480 × 880/470 ≈ 898px */
+  aspect-ratio: 470 / 880;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* показываем фото целиком, без обрезки */
+  filter: contrast(1.05) saturate(1.06);
+}
+/* лёгкий fade сверху — чтобы kicker не «висел» на фото */
+.hero-photo::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(251,246,236,0.12) 0%,
+    transparent 20%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+/* ── Вращающийся орнамент накрывает статичный из фото (верхний правый) ── */
+.hero-orn {
+  position: absolute;
+  /* статичный в фото: ~top 0, right 0, ширина ~42% фото */
+  top: -1%;
+  right: -1%;
+  width: 44%;
+  aspect-ratio: 1;
+  z-index: 3;
+  pointer-events: none;
+  /* подбираем тон под золото фото-орнамента */
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 8px rgba(178,139,51,0.15));
+}
+.hero-orn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: tilda-rotate 28s linear infinite;
+  transform-origin: center;
+}
+
+.hero-ornament { display: none; }
+
+
+.hero-kicker {
+  position: absolute;
+  top: 2.5%; left: 4%;
+  z-index: 5;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  font-size: clamp(9px, 2.2vw, 12px);
+  color: var(--rose);
+  white-space: nowrap;
+}
+
+/*
+  Белый прямоугольник в фото находится:
+  left ~5%  top ~57%  width ~50%  height ~30%
+  Текст центрируем внутри него.
+*/
+.hero-text {
+  position: absolute;
+  left: 16%;
+  width: 50%;
+  top: 60%;
+  height: 40%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2% 4%;
+  box-sizing: border-box;
+}
+
+.hero-text .pre-name {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: clamp(8px, 2vw, 11px);
+  color: var(--gold);
+  margin-bottom: 60px;
+  white-space: nowrap;
+}
+
+.bride-name {
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
+  font-size: clamp(52px, 18vw, 120px);
+  font-weight: 500;
+  color: var(--rose);
+  line-height: 1;
+  text-shadow: 0 2px 12px rgba(122, 31, 43, 0.12);
+  margin: 0;
+}
+
+.hero-divider {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; margin: 4px auto;
+  color: var(--gold);
+  width: 100%;
+}
+.hero-divider span {
+  display: block; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.hero-divider svg { width: 10px; height: 10px; flex-shrink: 0; }
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(9px, 2.5vw, 14px);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--rose);
+  white-space: nowrap;
+}
+
+.scroll-hint {
+  position: absolute; left: 50%; bottom: 22px;
+  transform: translateX(-50%);
+  width: 22px; height: 36px;
+  border: 1px solid var(--gold); border-radius: 12px;
+  z-index: 5;
+}
+.scroll-hint span {
+  position: absolute; left: 50%; top: 7px;
+  width: 3px; height: 7px;
+  background: var(--gold); border-radius: 2px;
+  transform: translateX(-50%);
+  animation: scrollDot 1.6s ease-in-out infinite;
+}
+@keyframes scrollDot {
+  0%, 100% { transform: translate(-50%, 0); opacity: 1; }
+  60% { transform: translate(-50%, 14px); opacity: 0; }
+}
+
+/* ============================================================
+   Базовая секция
+   ============================================================ */
+.section {
+  padding: 64px 28px;
+  text-align: center;
+  position: relative;
+  color: var(--rose);
+}
+.section + .section { padding-top: 24px; }
+
+.uptitle {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.18em;
+  font-size: 18px;
+  color: var(--gold);
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.heading {
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
+  font-weight: 500;
+  font-size: clamp(56px, 14vw, 84px);
+  color: var(--rose);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.body-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1.55;
+  color: var(--rose);
+  max-width: 460px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Декоративный орнаментальный кружок-разделитель — с вращением как в Тильде */
+.ornament-circle {
+  width: 130px; height: 130px;
+  margin: 0 auto 16px;
+  opacity: 0.9;
+}
+.ornament-circle img {
+  width: 100%; height: 100%; object-fit: contain;
+  animation: tilda-rotate 22s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes tilda-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Пульсация для выделенного дня в календаре (как в Тильде) */
+@keyframes tilda-pulse {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.08); }
+  50%  { transform: scale(1.14); }
+  75%  { transform: scale(1.08); }
+  100% { transform: scale(1.04); }
+}
+
+/* ============ Greeting / Date ============ */
+.greeting {
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
+  font-weight: 500;
+  font-size: clamp(44px, 11vw, 64px);
+  color: var(--rose);
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+.event-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--rose);
+  letter-spacing: 0.05em;
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+
+/* ============ Той салтанаты ============ */
+.hall-block .hall-name {
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
+  font-weight: 500;
+  font-size: clamp(64px, 16vw, 92px);
+  color: var(--rose);
+  line-height: 1;
+  margin-bottom: 22px;
+}
+
+/* ============ Calendar ============ */
+.calendar { padding-top: 24px; padding-bottom: 24px; }
+.cal-title {
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
+  font-weight: 500;
+  font-size: clamp(48px, 12vw, 64px);
+  color: var(--rose);
+  margin-bottom: 18px;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  max-width: 360px;
+  margin: 0 auto;
+  gap: 4px;
+}
+.cal-wd {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  padding: 6px 0;
+}
+.cal-cell {
+  aspect-ratio: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--gold);
+  font-weight: 400;
+}
+.cal-cell.is-empty { color: transparent; }
+.cal-cell.is-highlight {
+  position: relative;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--rose);
+  font-weight: 700;
+  animation: tilda-pulse 2.6s ease-in-out infinite;
+  transform-origin: center;
+}
+.cal-cell.is-highlight .heart-outline {
+  position: absolute;
+  inset: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  overflow: visible;
+}
+.cal-cell.is-highlight > span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ Venue ============ */
+.venue { padding-top: 30px; }
+.venue-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.venue-lines {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--rose);
+  line-height: 1.5;
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+.venue-map-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 24px auto 0;
+  padding: 16px 32px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50px;
+  color: var(--rose);
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: background .25s ease, color .25s ease;
+  max-width: 240px;
+}
+.venue-map-card:hover { background: var(--rose); color: var(--beige); border-color: var(--rose); }
+.venue-map-icon { font-size: 18px; line-height: 1; }
+.venue-map-text { font-size: 13px; letter-spacing: 0.2em; }
+
+/* ============ DressCode ============ */
+.dresscode { padding-top: 30px; }
+.dc-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--rose);
+  max-width: 440px;
+  margin: 0 auto 24px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+.dc-colors {
+  display: flex; justify-content: center; gap: 12px;
+  flex-wrap: wrap;
+}
+.dc-swatch {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.5), 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* ============ Hosts ============ */
+.hosts-section { padding-top: 30px; padding-bottom: 30px; }
+.hosts-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+.hosts-name {
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
+  font-weight: 500;
+  font-size: clamp(64px, 16vw, 88px);
+  color: var(--rose);
+  line-height: 1.1;
+}
+.hosts-amp {
+  margin: 14px auto 0;
+  width: 50px; opacity: 0.9;
+}
+
+/* ============ RSVP ============ */
+.rsvp { padding-top: 36px; }
+.rsvp-deadline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--rose);
+  max-width: 440px;
+  margin: 0 auto 26px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.rsvp-form { max-width: 420px; margin: 0 auto; text-align: left; }
+
+.field { display: block; margin-bottom: 28px; }
+.field span {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; letter-spacing: 0.15em;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.field input,
+.field select {
+  width: 100%;
+  padding: 6px 0 10px;
+  border: none;
+  border-bottom: 1px solid var(--gold);
+  background: transparent;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  color: var(--rose);
+  border-radius: 0;
+  outline: none;
+  transition: border-color .2s;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+}
+.field select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%23b28b33' d='M0 0l5 6 5-6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 24px;
+  cursor: pointer;
+}
+.field input:focus, .field select:focus { border-bottom-color: var(--rose); }
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: var(--rose);
+  color: var(--beige);
+  border: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: background .25s ease;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.btn-primary:hover { background: var(--rose-2); }
+
+.rsvp-thanks { padding: 20px 0; }
+.thanks-mark { font-size: 38px; color: var(--gold); margin-bottom: 14px; }
+.rsvp-thanks h3 {
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
+  font-size: 48px;
+  font-weight: 500;
+  color: var(--rose);
+  margin-bottom: 10px;
+}
+.rsvp-thanks p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--rose);
+}
+
+/* ============ Contacts ============ */
+.contacts { padding-top: 36px; padding-bottom: 50px; }
+.contacts-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+.contact-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 10px;
+  max-width: 360px; margin: 0 auto;
+}
+.contact-pill {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 18px;
+  border: 1px solid var(--gold);
+  border-radius: 50px;
+  text-decoration: none;
+  color: var(--rose);
+  transition: all .25s ease;
+  background: transparent;
+  font-family: 'Cormorant Garamond', serif;
+}
+.contact-pill:hover {
+  background: var(--rose); color: var(--beige);
+  border-color: var(--rose);
+}
+.contact-pill .ci { display: flex; color: var(--gold); }
+.contact-pill:hover .ci { color: var(--gold-2); }
+.contact-pill .cv { font-size: 17px; letter-spacing: 0.05em; }
+
+/* ============ Footer ============ */
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 52px 24px 48px;
+  text-align: center;
+  background: var(--rose);
+  overflow: hidden;
+}
+.footer::before {
+  /* тонкая золотая линия сверху */
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,106,0.6), transparent);
+}
+.footer-orn {
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  opacity: 0.45;
+  animation: tilda-rotate 28s linear infinite;
+}
+.footer-orn img { width: 100%; height: 100%; object-fit: contain; }
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(201,168,106,0.65);
+  margin-bottom: 8px;
+}
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+  font-weight: 400;
+}
+
+/* ============ Music button ============ */
+.music-btn {
+  position: fixed;
+  top: 18px; right: calc(50% - 260px);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--rose);
+  color: var(--gold-2);
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(6px);
+  transition: all .25s ease;
+}
+.music-btn:hover { background: var(--rose-2); color: var(--beige); }
+.music-btn .music-icon { display: flex; }
+.music-btn.is-playing .music-icon { animation: spin 4s linear infinite; }
+.music-btn .music-pulse {
+  position: absolute; inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  opacity: 0;
+}
+.music-btn.is-playing .music-pulse { animation: pulse 1.6s ease-out infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse {
+  0% { transform: scale(1); opacity: .8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+  .music-btn { right: 14px; }
+  .section { padding: 56px 22px; }
+  .cal-cell { font-size: 16px; }
+  .dc-swatch { width: 38px; height: 38px; }
+  .hero-ornament { width: 78%; right: -16%; top: -6%; }
+}
