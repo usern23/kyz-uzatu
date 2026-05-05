@@ -56,8 +56,8 @@ img { max-width: 100%; display: block; }
 
 /* Секции появляются мягче (only opacity, без сильного сдвига) */
 section.reveal {
-  transform: translateY(12px);
-  transition-duration: 0.7s;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
 }
 
 /* ============================================================
@@ -216,14 +216,14 @@ section.reveal {
 /* ── Вращающийся орнамент — половиной за правым краем ── */
 .hero-orn {
   position: absolute;
-  top: -120px;
-  right: -180px;
-  width: 420px;
-  height: 420px;
+  top: -80px;
+  right: -120px;
+  width: 280px;
+  height: 280px;
   aspect-ratio: 1;
   z-index: 3;
   pointer-events: none;
-  opacity: 0.55;
+  opacity: 0.5;
   filter: drop-shadow(0 4px 14px rgba(178,139,51,0.18));
 }
 .hero-orn img {
@@ -443,8 +443,8 @@ section.reveal {
 
 .schedule-date {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(13px, 3.5vw, 17px);
-  letter-spacing: 0.3em;
+  font-size: clamp(16px, 4.5vw, 22px);
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 28px;
