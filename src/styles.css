@@ -413,8 +413,19 @@ img { max-width: 100%; display: block; }
   font-size: clamp(44px, 11vw, 64px);
   color: var(--rose);
   letter-spacing: 0.02em;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   line-height: 1.1;
+}
+
+/* Убрать лишнее пространство под таймингом */
+#invite {
+  padding-bottom: 16px;
+}
+#invite .schedule {
+  margin-bottom: 0;
+}
+#invite .hall-block {
+  margin-top: 8px;
 }
 /* ════ Тайминг-расписание ════ */
 .schedule {
