@@ -19,6 +19,8 @@ export default function Hero({ data }: Props) {
         </div>
 
         <div className="hero-text">
+          <img className="hero-text-orn hero-text-orn-tl" src={`${import.meta.env.BASE_URL}img/tilda/orn-top.png`} aria-hidden="true" alt="" />
+          <img className="hero-text-orn hero-text-orn-br" src={`${import.meta.env.BASE_URL}img/tilda/orn-top.png`} aria-hidden="true" alt="" />
           <p className="pre-name">— Той шақыруы —</p>
           <h1 className="bride-name">{data.brideName}</h1>
           <div className="hero-divider" aria-hidden="true">
