@@ -8,40 +8,39 @@ export default function MusicPlayer({ src }: Props) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [playing, setPlaying] = useState(false)
   const [error, setError] = useState(false)
-  const triedAutoplay = useRef(false)
-
   useEffect(() => {
     const a = audioRef.current
     if (!a) return
     a.volume = 0.55
-  }, [])
 
-  // Автоплей при первом скролле
-  useEffect(() => {
-    const tryPlay = () => {
-      if (triedAutoplay.current) return
-      const a = audioRef.current
-      if (!a) return
-      triedAutoplay.current = true
+    const unlock = () => {
       a.play()
-        .then(() => setPlaying(true))
-        .catch(() => { /* браузер заблокировал — пользователь нажмёт кнопку */ })
+        .then(() => {
+          setPlaying(true)
+          // Успешно — снимаем все слушатели
+          document.removeEventListener('touchstart', unlock)
+          document.removeEventListener('click', unlock)
+          document.removeEventListener('keydown', unlock)
+        })
+        .catch(() => {
+          // Ещё не получилось — попробуем при следующем жесте
+        })
     }
 
-    // Пробуем сразу (работает если у пользователя включён autoplay)
-    audioRef.current?.play()
-      .then(() => { triedAutoplay.current = true; setPlaying(true) })
+    // Пробуем сразу (если браузер разрешает autoplay)
+    a.play()
+      .then(() => setPlaying(true))
       .catch(() => {
-        // Не сработало — ждём скролла
-        window.addEventListener('scroll', tryPlay, { once: true })
-        window.addEventListener('touchstart', tryPlay, { once: true })
-        window.addEventListener('pointerdown', tryPlay, { once: true })
+        // Браузер требует жест — ждём первого касания/клика/клавиши
+        document.addEventListener('touchstart', unlock)
+        document.addEventListener('click', unlock)
+        document.addEventListener('keydown', unlock)
       })
 
     return () => {
-      window.removeEventListener('scroll', tryPlay)
-      window.removeEventListener('touchstart', tryPlay)
-      window.removeEventListener('pointerdown', tryPlay)
+      document.removeEventListener('touchstart', unlock)
+      document.removeEventListener('click', unlock)
+      document.removeEventListener('keydown', unlock)
     }
   }, [])
 
