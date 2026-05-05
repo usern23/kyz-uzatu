@@ -202,19 +202,18 @@ img { max-width: 100%; display: block; }
   z-index: 2;
 }
 
-/* ── Вращающийся орнамент накрывает статичный из фото (верхний правый) ── */
+/* ── Вращающийся орнамент в правом верхнем углу ── */
 .hero-orn {
   position: absolute;
-  /* статичный в фото: ~top 0, right 0, ширина ~42% фото */
-  top: -1%;
-  right: -1%;
-  width: 44%;
+  top: 4%;
+  right: 4%;
+  width: 22%;
+  max-width: 140px;
   aspect-ratio: 1;
   z-index: 3;
   pointer-events: none;
-  /* подбираем тон под золото фото-орнамента */
   opacity: 0.95;
-  filter: drop-shadow(0 2px 8px rgba(178,139,51,0.15));
+  filter: drop-shadow(0 2px 10px rgba(178,139,51,0.25));
 }
 .hero-orn img {
   width: 100%;
@@ -240,24 +239,27 @@ img { max-width: 100%; display: block; }
 }
 
 /*
-  Белый прямоугольник в фото находится:
-  left ~5%  top ~57%  width ~50%  height ~30%
-  Текст центрируем внутри него.
+  Белый прямоугольник по центру с именем невесты
 */
 .hero-text {
   position: absolute;
-  left: 16%;
-  width: 50%;
-  top: 60%;
-  height: 40%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 76%;
+  max-width: 320px;
   z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2% 4%;
+  padding: 28px 20px 26px;
   box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
 }
 
 .hero-text .pre-name {
@@ -266,13 +268,13 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   font-size: clamp(8px, 2vw, 11px);
   color: var(--gold);
-  margin-bottom: 60px;
+  margin-bottom: 14px;
   white-space: nowrap;
 }
 
 .bride-name {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(52px, 18vw, 120px);
+  font-size: clamp(48px, 14vw, 96px);
   font-weight: 500;
   color: var(--rose);
   line-height: 1;
