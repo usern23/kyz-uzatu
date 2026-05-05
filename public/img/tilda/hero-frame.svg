@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 850" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9a86a"/>
+      <stop offset="40%" stop-color="#b28b33"/>
+      <stop offset="100%" stop-color="#c9a86a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ═══ OUTER BORDER ═══ -->
+  <rect x="10" y="10" width="600" height="830" fill="none" stroke="#b28b33" stroke-width="1.6" opacity="0.9"/>
+  <!-- inner thin line -->
+  <rect x="22" y="22" width="576" height="806" fill="none" stroke="#c9a86a" stroke-width="0.7" opacity="0.65"/>
+
+  <!-- ═══ TOP EDGE ORNAMENT ═══ -->
+  <!-- left scroll -->
+  <path d="M 68,10 C 68,2 78,-2 90,-2 C 108,-2 116,6 130,6 L 176,6 C 188,6 196,2 206,2 C 218,2 224,10 224,10" fill="none" stroke="#b28b33" stroke-width="1.5" opacity="0.95"/>
+  <!-- right scroll (mirror) -->
+  <path d="M 552,10 C 552,2 542,-2 530,-2 C 512,-2 504,6 490,6 L 444,6 C 432,6 424,2 414,2 C 402,2 396,10 396,10" fill="none" stroke="#b28b33" stroke-width="1.5" opacity="0.95"/>
+  <!-- center diamond -->
+  <polygon points="310,0 316,10 310,20 304,10" fill="#b28b33" opacity="0.9"/>
+  <polygon points="310,3 314,10 310,17 306,10" fill="#c9a86a" opacity="0.7"/>
+  <!-- small side diamonds -->
+  <polygon points="230,5 234,10 230,15 226,10" fill="#b28b33" opacity="0.7"/>
+  <polygon points="390,5 394,10 390,15 386,10" fill="#b28b33" opacity="0.7"/>
+
+  <!-- ═══ BOTTOM EDGE ORNAMENT (mirror of top) ═══ -->
+  <path d="M 68,840 C 68,848 78,852 90,852 C 108,852 116,844 130,844 L 176,844 C 188,844 196,848 206,848 C 218,848 224,840 224,840" fill="none" stroke="#b28b33" stroke-width="1.5" opacity="0.95"/>
+  <path d="M 552,840 C 552,848 542,852 530,852 C 512,852 504,844 490,844 L 444,844 C 432,844 424,848 414,848 C 402,848 396,840 396,840" fill="none" stroke="#b28b33" stroke-width="1.5" opacity="0.95"/>
+  <polygon points="310,830 316,840 310,850 304,840" fill="#b28b33" opacity="0.9"/>
+  <polygon points="310,833 314,840 310,847 306,840" fill="#c9a86a" opacity="0.7"/>
+  <polygon points="230,835 234,840 230,845 226,840" fill="#b28b33" opacity="0.7"/>
+  <polygon points="390,835 394,840 390,845 386,840" fill="#b28b33" opacity="0.7"/>
+
+  <!-- ═══ LEFT EDGE ORNAMENT ═══ -->
+  <path d="M 10,190 C 2,190 -2,200 -2,215 C -2,233 6,241 6,258 L 6,305 C 6,320 2,328 2,342 C 2,356 10,362 10,362" fill="none" stroke="#b28b33" stroke-width="1.5" opacity="0.95"/>
+  <path d="M 10,488 C 2,488 -2,498 -2,513 C -2,531 6,539 6,556 L 6,603 C 6,618 2,626 2,640 C 2,654 10,660 10,660" fill="none" stroke="#b28b33" stroke-width="1.5" opacity="0.95"/>
+  <polygon points="0,420 10,425 20,420 10,415" fill="#b28b33" opacity="0.9"/>
+  <polygon points="3,420 10,424 17,420 10,416" fill="#c9a86a" opacity="0.7"/>
+  <polygon points="5,368 10,373 15,368 10,363" fill="#b28b33" opacity="0.7"/>
+  <polygon points="5,467 10,472 15,467 10,462" fill="#b28b33" opacity="0.7"/>
+
+  <!-- ═══ RIGHT EDGE ORNAMENT (mirror of left) ═══ -->
+  <path d="M 610,190 C 618,190 622,200 622,215 C 622,233 614,241 614,258 L 614,305 C 614,320 618,328 618,342 C 618,356 610,362 610,362" fill="none" stroke="#b28b33" stroke-width="1.5" opacity="0.95"/>
+  <path d="M 610,488 C 618,488 622,498 622,513 C 622,531 614,539 614,556 L 614,603 C 614,618 618,626 618,640 C 618,654 610,660 610,660" fill="none" stroke="#b28b33" stroke-width="1.5" opacity="0.95"/>
+  <polygon points="600,420 610,425 620,420 610,415" fill="#b28b33" opacity="0.9"/>
+  <polygon points="603,420 610,424 617,420 610,416" fill="#c9a86a" opacity="0.7"/>
+  <polygon points="605,368 610,373 615,368 610,363" fill="#b28b33" opacity="0.7"/>
+  <polygon points="605,467 610,472 615,467 610,462" fill="#b28b33" opacity="0.7"/>
+
+  <!-- ═══ TOP-LEFT CORNER SCROLLWORK ═══ -->
+  <rect x="8" y="8" width="12" height="12" fill="#b28b33" opacity="0.9"/>
+  <rect x="10" y="10" width="8" height="8" fill="#c9a86a" opacity="0.7"/>
+  <!-- outer curl -->
+  <path d="M 20,10 C 30,10 38,14 42,22 C 46,30 40,38 32,36 C 24,34 22,28 28,24 C 32,22 36,26 34,30" fill="none" stroke="#b28b33" stroke-width="1.3" stroke-linecap="round" opacity="0.9"/>
+  <!-- inner curl -->
+  <path d="M 10,20 C 10,30 14,38 22,42 C 30,46 38,40 36,32 C 34,24 28,22 24,28 C 22,32 26,36 30,34" fill="none" stroke="#b28b33" stroke-width="1.3" stroke-linecap="round" opacity="0.9"/>
+  <!-- small accent circle -->
+  <circle cx="48" cy="48" r="3" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+  <circle cx="48" cy="48" r="1.2" fill="#b28b33" opacity="0.7"/>
+  <!-- leaf flourish -->
+  <path d="M 58,22 C 58,22 62,30 58,36 C 54,42 48,42 48,36 C 48,30 54,26 58,22 Z" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+  <path d="M 22,58 C 22,58 30,62 36,58 C 42,54 42,48 36,48 C 30,48 26,54 22,58 Z" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+
+  <!-- ═══ TOP-RIGHT CORNER SCROLLWORK ═══ -->
+  <rect x="600" y="8" width="12" height="12" fill="#b28b33" opacity="0.9"/>
+  <rect x="602" y="10" width="8" height="8" fill="#c9a86a" opacity="0.7"/>
+  <path d="M 600,10 C 590,10 582,14 578,22 C 574,30 580,38 588,36 C 596,34 598,28 592,24 C 588,22 584,26 586,30" fill="none" stroke="#b28b33" stroke-width="1.3" stroke-linecap="round" opacity="0.9"/>
+  <path d="M 610,20 C 610,30 606,38 598,42 C 590,46 582,40 584,32 C 586,24 592,22 596,28 C 598,32 594,36 590,34" fill="none" stroke="#b28b33" stroke-width="1.3" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="572" cy="48" r="3" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+  <circle cx="572" cy="48" r="1.2" fill="#b28b33" opacity="0.7"/>
+  <path d="M 562,22 C 562,22 558,30 562,36 C 566,42 572,42 572,36 C 572,30 566,26 562,22 Z" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+  <path d="M 598,58 C 598,58 590,62 584,58 C 578,54 578,48 584,48 C 590,48 594,54 598,58 Z" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+
+  <!-- ═══ BOTTOM-LEFT CORNER SCROLLWORK ═══ -->
+  <rect x="8" y="830" width="12" height="12" fill="#b28b33" opacity="0.9"/>
+  <rect x="10" y="832" width="8" height="8" fill="#c9a86a" opacity="0.7"/>
+  <path d="M 20,840 C 30,840 38,836 42,828 C 46,820 40,812 32,814 C 24,816 22,822 28,826 C 32,828 36,824 34,820" fill="none" stroke="#b28b33" stroke-width="1.3" stroke-linecap="round" opacity="0.9"/>
+  <path d="M 10,830 C 10,820 14,812 22,808 C 30,804 38,810 36,818 C 34,826 28,828 24,822 C 22,818 26,814 30,816" fill="none" stroke="#b28b33" stroke-width="1.3" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="48" cy="802" r="3" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+  <circle cx="48" cy="802" r="1.2" fill="#b28b33" opacity="0.7"/>
+  <path d="M 58,828 C 58,828 62,820 58,814 C 54,808 48,808 48,814 C 48,820 54,824 58,828 Z" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+  <path d="M 22,792 C 22,792 30,788 36,792 C 42,796 42,802 36,802 C 30,802 26,796 22,792 Z" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+
+  <!-- ═══ BOTTOM-RIGHT CORNER SCROLLWORK ═══ -->
+  <rect x="600" y="830" width="12" height="12" fill="#b28b33" opacity="0.9"/>
+  <rect x="602" y="832" width="8" height="8" fill="#c9a86a" opacity="0.7"/>
+  <path d="M 600,840 C 590,840 582,836 578,828 C 574,820 580,812 588,814 C 596,816 598,822 592,826 C 588,828 584,824 586,820" fill="none" stroke="#b28b33" stroke-width="1.3" stroke-linecap="round" opacity="0.9"/>
+  <path d="M 610,830 C 610,820 606,812 598,808 C 590,804 582,810 584,818 C 586,826 592,828 596,822 C 598,818 594,814 590,816" fill="none" stroke="#b28b33" stroke-width="1.3" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="572" cy="802" r="3" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+  <circle cx="572" cy="802" r="1.2" fill="#b28b33" opacity="0.7"/>
+  <path d="M 562,828 C 562,828 558,820 562,814 C 566,808 572,808 572,814 C 572,820 566,824 562,828 Z" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+  <path d="M 598,792 C 598,792 590,788 584,792 C 578,796 578,802 584,802 C 590,802 594,796 598,792 Z" fill="none" stroke="#b28b33" stroke-width="1" opacity="0.7"/>
+</svg>

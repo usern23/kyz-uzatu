@@ -18,7 +18,7 @@ export default function Hero({ data }: Props) {
           <img src={`${import.meta.env.BASE_URL}img/tilda/bride-saukele.jpg`} alt="" />
         </div>
 
-        <div className="hero-text" style={{backgroundImage: `url(${import.meta.env.BASE_URL}img/tilda/bf4773c2d1ef09567bb79a6f4a5936b1.jpg)`}}>
+        <div className="hero-text" style={{backgroundImage: `url(${import.meta.env.BASE_URL}img/tilda/hero-frame.svg)`}}>
           <div className="hero-text-content">
             <p className="pre-name">— Той шақыруы —</p>
             <h1 className="bride-name">{data.brideName}</h1>

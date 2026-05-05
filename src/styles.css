@@ -242,7 +242,7 @@ img { max-width: 100%; display: block; }
 }
 
 /*
-  Белый прямоугольник снизу — фон задаётся через inline style (background-image: frame.jpg)
+  Белый прямоугольник снизу — фон задаётся через inline style (background-image: hero-frame.svg)
 */
 .hero-text {
   position: absolute;
@@ -258,7 +258,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
   padding: 0;
   box-sizing: border-box;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.92);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
