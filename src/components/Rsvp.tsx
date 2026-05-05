@@ -2,6 +2,8 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Invitation } from '../data'
 
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwZYDBj8xmhUPk3ZcVCYenLEA8lAro1ggmzjwZG3VMyUrIvi9CKg4zIW9RTwf5fTa9-/exec'
+
 interface Props {
   data: Invitation
 }
@@ -10,10 +12,25 @@ export default function Rsvp({ data }: Props) {
   const [name, setName] = useState('')
   const [answer, setAnswer] = useState('yes')
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
 
-  const submit = (e: FormEvent<HTMLFormElement>) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!name.trim()) return
+    if (!name.trim() || sending) return
+    setSending(true)
+    try {
+      await fetch(SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          name: name.trim(),
+          answer: answer === 'yes' ? 'Приду' : 'Не приду',
+        }),
+      })
+    } catch {
+      /* игнорируем — no-cors всё равно не видит ответ */
+    }
     setSent(true)
   }
 
@@ -42,8 +59,8 @@ export default function Rsvp({ data }: Props) {
             </select>
           </label>
 
-          <button className="btn-primary" type="submit">
-            Растау
+          <button className="btn-primary" type="submit" disabled={sending}>
+            {sending ? 'Жіберілуде…' : 'Растау'}
           </button>
         </form>
       ) : (
