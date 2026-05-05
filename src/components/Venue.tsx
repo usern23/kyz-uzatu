@@ -6,7 +6,7 @@ interface Props {
 
 export default function Venue({ venue }: Props) {
   const q = encodeURIComponent(venue.mapQuery || venue.address)
-  const link = `https://www.google.com/maps/search/?api=1&query=${q}`
+  const link = `https://yandex.ru/maps/?text=${q}`
 
   return (
     <section className="venue section reveal">
