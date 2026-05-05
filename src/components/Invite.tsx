@@ -6,7 +6,7 @@ interface Props {
 
 export default function Invite({ data }: Props) {
   return (
-    <section id="invite" className="invite section">
+    <section id="invite" className="invite section reveal">
       <p className="greeting reveal">{data.greeting}</p>
 
       {/* ── Красивый тайминг-расписание ── */}
