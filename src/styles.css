@@ -197,7 +197,9 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(180deg,
     rgba(251,246,236,0.12) 0%,
     transparent 20%,
-    transparent 100%
+    transparent 72%,
+    rgba(251,246,236,0.80) 88%,
+    var(--beige) 100%
   );
   z-index: 2;
 }
@@ -260,23 +262,28 @@ img { max-width: 100%; display: block; }
   -webkit-backdrop-filter: blur(2px);
 }
 /* Угловые орнаменты рамки */
-.hero-text-orn {
+.hero-text-frame {
   position: absolute;
-  width: 32px;
-  height: 32px;
-  opacity: 0.55;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  mix-blend-mode: multiply;
   pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
 }
-.hero-text-orn-tl {
-  top: 6px;
-  left: 6px;
+.hero-text-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
-.hero-text-orn-br {
-  bottom: 6px;
-  right: 6px;
-  transform: rotate(180deg);
-}
-.hero-text .pre-name {
+.hero-text .pre-name, .hero-text-content .pre-name {
   font-family: 'Cormorant Garamond', serif;
   letter-spacing: 0.25em;
   text-transform: uppercase;
