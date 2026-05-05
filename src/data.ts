@@ -29,6 +29,7 @@ export interface Invitation {
   eventDate: string
   eventDateLabel: string
   eventTimeLabel: string
+  gatheringTimeLabel: string
   calendarMonthLabel: string
   calendarYear: number
   calendarMonth: number
@@ -48,14 +49,15 @@ export interface Invitation {
 export const invitation: Invitation = {
   brideName: 'Сабина',
   hosts: 'Марат — Алия',
-  eventDate: '2026-07-18T14:00:00+06:00',
-  eventDateLabel: '18 шілде 2026 жыл',
-  eventTimeLabel: 'сағат 14:00',
+  eventDate: '2026-07-25T15:00:00+06:00',
+  eventDateLabel: '25 шілде 2026 жыл',
+  eventTimeLabel: 'сағат 15:00',
+  gatheringTimeLabel: 'Қонақтарды қабылдау 14:30',
 
   calendarMonthLabel: 'Шілде 2026ж.',
   calendarYear: 2026,
   calendarMonth: 7,
-  highlightDay: 18,
+  highlightDay: 25,
 
   greeting: 'Құрметті қонақтар!',
   hallName: 'Той салтанаты',
@@ -64,10 +66,10 @@ export const invitation: Invitation = {
 
   venue: {
     title: 'Мекен-жай:',
-    lines: ['Омбы қаласы', '22 декабря көшесі, 92а', '“Империал” мейрамханасы'],
-    name: '“Империал” мейрамханасы',
-    address: 'Омбы қ., 22 декабря көшесі, 92а',
-    mapQuery: 'Омск, ул. 22 Декабря, 92А, ресторан Империал',
+    lines: ['г. Омск', 'Банкетный зал «Золото»'],
+    name: 'Банкетный зал «Золото»',
+    address: 'г. Омск, банкетный зал «Золото»',
+    mapQuery: 'Омск банкетный зал Золото',
   },
 
   dressCode: {
@@ -77,7 +79,7 @@ export const invitation: Invitation = {
   },
 
   hostsLabel: 'Той иелері:',
-  rsvpDeadline: 'Келу/келмеуіңізді 8 шілдеге дейін растауыңызды сұраймыз',
+  rsvpDeadline: 'Келу/келмеуіңізді 25 шілдеге дейін растауыңызды сұраймыз',
   contactsLabel: 'Байланысу үшін:',
 
   contacts: [

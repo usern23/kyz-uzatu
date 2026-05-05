@@ -5,10 +5,7 @@ import Hero from './components/Hero'
 import Invite from './components/Invite'
 import CalendarSection from './components/CalendarSection'
 import Venue from './components/Venue'
-import DressCode from './components/DressCode'
-import Hosts from './components/Hosts'
 import Rsvp from './components/Rsvp'
-import Contacts from './components/Contacts'
 
 const Sep = () => (
   <div className="sep" aria-hidden="true">
@@ -62,17 +59,11 @@ export default function App() {
       <Sep />
       <Venue venue={invitation.venue} />
       <Sep />
-      <DressCode data={invitation} />
-      <Sep />
-      <Hosts data={invitation} />
-      <Sep />
       <Rsvp data={invitation} />
       <footer className="footer reveal">
         <div className="footer-orn" aria-hidden="true">
           <img src={`${import.meta.env.BASE_URL}img/tilda/big-orn-3.webp`} alt="" />
         </div>
-        <p className="footer-tagline">Разработка приглашений</p>
-        <p className="footer-brand">&mdash;&nbsp;Invite to Event&nbsp;&mdash;</p>
       </footer>
     </div>
   )

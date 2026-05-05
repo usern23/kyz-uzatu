@@ -11,6 +11,7 @@ export default function Invite({ data }: Props) {
 
       <div className="event-date reveal">
         <p>{data.eventDateLabel}</p>
+        <p>{data.gatheringTimeLabel}</p>
         <p>{data.eventTimeLabel}</p>
       </div>
 
