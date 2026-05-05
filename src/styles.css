@@ -177,6 +177,8 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 470 / 880;
   width: 100%;
   overflow: hidden;
+  /* скруглённый арочный обрез снизу */
+  border-radius: 0 0 50% 50% / 0 0 80px 80px;
 }
 
 .hero-photo {
