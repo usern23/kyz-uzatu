@@ -7,15 +7,15 @@ interface Props {
 export default function Hero({ data }: Props) {
   return (
     <section className="hero">
+      <div className="hero-orn" aria-hidden="true">
+        <img src={`${import.meta.env.BASE_URL}img/tilda/big-orn-3.webp`} alt="" />
+      </div>
+
       <div className="hero-stage">
         <p className="hero-kicker">Қыз ұзату</p>
 
         <div className="hero-photo" aria-hidden="true">
           <img src={`${import.meta.env.BASE_URL}img/tilda/bride-saukele.jpg`} alt="" />
-        </div>
-
-        <div className="hero-orn" aria-hidden="true">
-          <img src={`${import.meta.env.BASE_URL}img/tilda/big-orn-3.webp`} alt="" />
         </div>
 
         <div className="hero-text">
