@@ -190,15 +190,16 @@ img { max-width: 100%; display: block; }
   object-fit: fill; /* показываем фото целиком, без обрезки */
   filter: contrast(1.05) saturate(1.06);
 }
-/* лёгкий fade сверху — чтобы kicker не «висел» на фото */
+/* лёгкий fade сверху — чтобы kicker не «висел» на фото + плавный переход снизу */
 .hero-photo::after {
   content: '';
   position: absolute; inset: 0;
   background: linear-gradient(180deg,
     rgba(251,246,236,0.12) 0%,
-    transparent 20%,
-    transparent 72%,
-    rgba(251,246,236,0.80) 88%,
+    transparent 15%,
+    transparent 65%,
+    rgba(251,246,236,0.55) 78%,
+    rgba(251,246,236,0.90) 90%,
     var(--beige) 100%
   );
   z-index: 2;
@@ -241,7 +242,7 @@ img { max-width: 100%; display: block; }
 }
 
 /*
-  Белый прямоугольник снизу — как было изначально
+  Белый прямоугольник снизу — фон задаётся через inline style (background-image: frame.jpg)
 */
 .hero-text {
   position: absolute;
@@ -255,23 +256,15 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2% 4%;
+  padding: 0;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background-color: transparent;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
-/* Угловые орнаменты рамки */
+/* Рамка-орнамент */
 .hero-text-frame {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.85;
+  display: none; /* не нужен, задаётся через background-image */
 }
 .hero-text-content {
   position: relative;
@@ -282,6 +275,8 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   width: 100%;
   height: 100%;
+  padding: 12% 10%;
+  box-sizing: border-box;
 }
 .hero-text .pre-name, .hero-text-content .pre-name {
   font-family: 'Cormorant Garamond', serif;
