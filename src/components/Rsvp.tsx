@@ -35,7 +35,7 @@ export default function Rsvp({ data }: Props) {
           </label>
 
           <label className="field">
-            <span>8 шілдеге дейін келу-келмеуіңізді растау</span>
+            <span>25 шілдеге дейін келу-келмеуіңізді растау</span>
             <select value={answer} onChange={(e) => setAnswer(e.target.value)}>
               <option value="yes">Міндетті түрде келемін</option>
               <option value="no">Келе алмаймын</option>
