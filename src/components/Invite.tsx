@@ -38,7 +38,7 @@ export default function Invite({ data }: Props) {
           </div>
       </div>
 
-      <p className="body-text reveal">{data.intro}</p>
+      <p className="body-text">{data.intro}</p>
     </section>
   )
 }

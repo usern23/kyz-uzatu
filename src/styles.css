@@ -425,9 +425,10 @@ img { max-width: 100%; display: block; }
   margin-bottom: 0;
 }
 #invite .hall-block {
-  margin-top: 24px;
-}
-/* ════ Тайминг-расписание ════ */
+  margin-top: 60px;
+}#invite .body-text {
+  margin-top: 16px;
+}/* ════ Тайминг-расписание ════ */
 .schedule {
   margin: 0 auto 8px;
   max-width: 340px;
