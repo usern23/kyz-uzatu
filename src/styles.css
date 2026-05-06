@@ -179,9 +179,9 @@ section.reveal {
   aspect-ratio: 470 / 720;
   width: 100%;
   overflow: hidden;
-  /* мягкая арка через mask вместо border-radius — нет жёсткого края */
-  -webkit-mask-image: radial-gradient(ellipse 130% 130px at 50% calc(100% + 65px), transparent 62%, black 68%);
-  mask-image: radial-gradient(ellipse 130% 130px at 50% calc(100% + 65px), transparent 62%, black 68%);
+  /* видимая арка через mask — плавное скругление без жёсткого clip-edge */
+  -webkit-mask-image: radial-gradient(ellipse 130% 130px at 50% calc(100% + 65px), transparent 65%, black 67%);
+  mask-image: radial-gradient(ellipse 130% 130px at 50% calc(100% + 65px), transparent 65%, black 67%);
 }
 
 .hero-photo {
@@ -203,9 +203,8 @@ section.reveal {
     transparent 0%,
     transparent 56%,
     rgba(251,246,236,0.28) 63%,
-    rgba(251,246,236,0.58) 74%,
-    rgba(251,246,236,0.86) 88%,
-    rgba(251,246,236,0.96) 100%
+    rgba(251,246,236,0.50) 75%,
+    rgba(251,246,236,0.62) 100%
   );
   z-index: 2;
 }
