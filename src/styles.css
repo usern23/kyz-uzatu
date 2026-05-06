@@ -179,7 +179,9 @@ section.reveal {
   aspect-ratio: 470 / 720;
   width: 100%;
   overflow: hidden;
-  border-radius: 0 0 50% 50% / 0 0 80px 80px;
+  /* мягкая арка через mask вместо border-radius — нет жёсткого края */
+  -webkit-mask-image: radial-gradient(ellipse 130% 130px at 50% calc(100% + 65px), transparent 62%, black 68%);
+  mask-image: radial-gradient(ellipse 130% 130px at 50% calc(100% + 65px), transparent 62%, black 68%);
 }
 
 .hero-photo {
