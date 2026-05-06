@@ -203,10 +203,11 @@ section.reveal {
   position: absolute; inset: 0;
   background: linear-gradient(180deg,
     transparent 0%,
-    transparent 56%,
+    transparent 55%,
     rgba(251,246,236,0.28) 63%,
-    rgba(251,246,236,0.50) 75%,
-    rgba(251,246,236,0.62) 100%
+    rgba(251,246,236,0.60) 74%,
+    rgba(251,246,236,0.90) 88%,
+    rgba(251,246,236,0.97) 100%
   );
   z-index: 2;
 }
