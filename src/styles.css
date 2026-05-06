@@ -193,16 +193,16 @@ section.reveal {
   object-fit: fill; /* показываем фото целиком, без обрезки */
   filter: contrast(1.05) saturate(1.06);
 }
-/* плавный fade снизу — белый фон фото растворяется в беж */
+/* плавный fade снизу — начинается от уровня текста, к дуге = цвет фона */
 .hero-photo::after {
   content: '';
   position: absolute; inset: 0;
   background: linear-gradient(180deg,
-    rgba(251,246,236,0.10) 0%,
-    transparent 12%,
-    transparent 72%,
-    rgba(251,246,236,0.45) 83%,
-    rgba(251,246,236,0.88) 93%,
+    transparent 0%,
+    transparent 56%,
+    rgba(251,246,236,0.28) 63%,
+    rgba(251,246,236,0.58) 74%,
+    rgba(251,246,236,0.86) 88%,
     rgba(251,246,236,0.96) 100%
   );
   z-index: 2;
@@ -287,7 +287,7 @@ section.reveal {
   color: var(--gold);
   margin-bottom: 20px;
   white-space: nowrap;
-  text-shadow: 0 1px 6px rgba(251,246,236,0.6);
+  text-shadow: 0 1px 8px rgba(251,246,236,0.9), 0 0 16px rgba(251,246,236,0.7);
 }
 
 .bride-name {
@@ -319,7 +319,7 @@ section.reveal {
   text-transform: uppercase;
   color: var(--rose);
   white-space: nowrap;
-  text-shadow: 0 1px 8px rgba(251,246,236,0.7);
+  text-shadow: 0 1px 10px rgba(251,246,236,0.9), 0 0 20px rgba(251,246,236,0.8);
 }
 
 .scroll-hint {
