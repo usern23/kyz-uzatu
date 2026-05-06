@@ -171,7 +171,11 @@ section.reveal {
 .hero {
   position: relative;
   overflow: visible;
-  background: transparent;
+  /* тот же фон что у .page — углы арки = цвет страницы → бесшовно */
+  background: var(--beige);
+  background-image:
+    radial-gradient(ellipse at 50% -10%, rgba(178, 139, 51, 0.10), transparent 60%),
+    radial-gradient(ellipse at 50% 110%, rgba(122, 31, 43, 0.06), transparent 60%);
 }
 
 .hero-stage {
@@ -179,9 +183,7 @@ section.reveal {
   aspect-ratio: 470 / 720;
   width: 100%;
   overflow: hidden;
-  /* видимая арка через mask — плавное скругление без жёсткого clip-edge */
-  -webkit-mask-image: radial-gradient(ellipse 130% 130px at 50% calc(100% + 65px), transparent 65%, black 67%);
-  mask-image: radial-gradient(ellipse 130% 130px at 50% calc(100% + 65px), transparent 65%, black 67%);
+  border-radius: 0 0 50% 50% / 0 0 80px 80px;
 }
 
 .hero-photo {
