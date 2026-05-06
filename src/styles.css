@@ -266,9 +266,7 @@ section.reveal {
   text-align: center;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.92);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background: none;
 }
 /* Рамка-орнамент */
 .hero-text-frame {
@@ -292,8 +290,9 @@ section.reveal {
   text-transform: uppercase;
   font-size: clamp(8px, 2vw, 11px);
   color: var(--gold);
-  margin-bottom: 60px;
+  margin-bottom: 8px;
   white-space: nowrap;
+  text-shadow: 0 1px 6px rgba(251,246,236,0.6);
 }
 
 .bride-name {
@@ -320,11 +319,12 @@ section.reveal {
 
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(9px, 2.5vw, 14px);
+  font-size: clamp(11px, 3vw, 17px);
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--rose);
   white-space: nowrap;
+  text-shadow: 0 1px 8px rgba(251,246,236,0.7);
 }
 
 .scroll-hint {
@@ -771,6 +771,63 @@ section.reveal {
 }
 .field input:focus, .field select:focus { border-bottom-color: var(--rose); }
 
+/* ─── RSVP Radio buttons ─── */
+.rsvp-radio-field {
+  border: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+.rsvp-radio-field legend {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.rsvp-radio {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(178,139,51,0.18);
+}
+.rsvp-radio:last-child { border-bottom: none; }
+.rsvp-radio input[type="radio"] { display: none; }
+.rsvp-radio-circle {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  position: relative;
+  transition: border-color 0.2s;
+}
+.rsvp-radio-circle::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--rose);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.rsvp-radio input[type="radio"]:checked ~ .rsvp-radio-circle {
+  border-color: var(--rose);
+}
+.rsvp-radio input[type="radio"]:checked ~ .rsvp-radio-circle::after {
+  opacity: 1;
+}
+.rsvp-radio-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--rose);
+  letter-spacing: 0.03em;
+}
+
 .btn-primary {
   width: 100%;
   padding: 14px;
@@ -782,7 +839,7 @@ section.reveal {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: 14px;
+  border-radius: 25px;
   transition: background .25s ease;
   margin-top: 6px;
   font-weight: 600;

@@ -10,6 +10,7 @@ interface Props {
 
 export default function Rsvp({ data }: Props) {
   const [name, setName] = useState('')
+  const [partner, setPartner] = useState('')
   const [answer, setAnswer] = useState('yes')
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
@@ -25,6 +26,7 @@ export default function Rsvp({ data }: Props) {
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify({
           name: name.trim(),
+          partner: partner.trim() || '—',
           answer: answer === 'yes' ? 'Приду' : 'Не приду',
         }),
       })
@@ -40,23 +42,55 @@ export default function Rsvp({ data }: Props) {
 
       {!sent ? (
         <form className="rsvp-form" onSubmit={submit}>
+
+          {/* Имя */}
           <label className="field">
-            <span>Аты- жөніңіз</span>
+            <span>Ваши имя и фамилия</span>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Иван Иванов, Анастасия Иванова"
+              placeholder="Иван Иванов"
               required
             />
           </label>
 
+          {/* Планируете ли присутствовать? */}
+          <fieldset className="field rsvp-radio-field">
+            <legend>Планируете ли вы присутствовать?</legend>
+            <label className="rsvp-radio">
+              <input
+                type="radio"
+                name="rsvp-answer"
+                value="yes"
+                checked={answer === 'yes'}
+                onChange={() => setAnswer('yes')}
+              />
+              <span className="rsvp-radio-circle" />
+              <span className="rsvp-radio-label">да, с удовольствием!</span>
+            </label>
+            <label className="rsvp-radio">
+              <input
+                type="radio"
+                name="rsvp-answer"
+                value="no"
+                checked={answer === 'no'}
+                onChange={() => setAnswer('no')}
+              />
+              <span className="rsvp-radio-circle" />
+              <span className="rsvp-radio-label">к сожалению, не смогу</span>
+            </label>
+          </fieldset>
+
+          {/* Имя партнёра */}
           <label className="field">
-            <span>25 шілдеге дейін келу-келмеуіңізді растау</span>
-            <select value={answer} onChange={(e) => setAnswer(e.target.value)}>
-              <option value="yes">Міндетті түрде келемін</option>
-              <option value="no">Келе алмаймын</option>
-            </select>
+            <span>Если вы будете с парой, укажите его/её имя</span>
+            <input
+              type="text"
+              value={partner}
+              onChange={(e) => setPartner(e.target.value)}
+              placeholder="Анастасия Иванова"
+            />
           </label>
 
           <button className="btn-primary" type="submit" disabled={sending}>

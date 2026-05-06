@@ -50,7 +50,7 @@ export const invitation: Invitation = {
   brideName: 'Сабина',
   hosts: 'Марат — Алия',
   eventDate: '2026-07-25T15:00:00+06:00',
-  eventDateLabel: '25 шілде 2026 жыл',
+  eventDateLabel: '25 июля 2026',
   eventTimeLabel: 'сағат 15:00',
   gatheringTimeLabel: 'Қонақтарды қабылдау 14:30',
 
