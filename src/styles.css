@@ -172,19 +172,14 @@ section.reveal {
   position: relative;
   overflow: visible;
   background: var(--beige);
-  /* арочный обрез снизу: фото плавно перетекает в фон без цветового стыка */
-  border-radius: 0 0 50% 50% / 0 0 72px 72px;
 }
 
 .hero-stage {
   position: relative;
-  /* высота = высота фото в натуральном соотношении (фото ~470×880) */
-  /* На мобильном 480px ширина → высота ≈ 480 × 880/470 ≈ 898px */
-  aspect-ratio: 470 / 880;
+  /* уменьшенное соотношение высоты: 470/720 вместо 470/880 */
+  aspect-ratio: 470 / 720;
   width: 100%;
   overflow: hidden;
-  /* скруглённый арочный обрез снизу */
-  border-radius: 0 0 50% 50% / 0 0 80px 80px;
 }
 
 .hero-photo {
@@ -290,7 +285,7 @@ section.reveal {
   text-transform: uppercase;
   font-size: clamp(8px, 2vw, 11px);
   color: var(--gold);
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   white-space: nowrap;
   text-shadow: 0 1px 6px rgba(251,246,236,0.6);
 }
