@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Invitation } from '../data'
 
-const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwZYDBj8xmhUPk3ZcVCYenLEA8lAro1ggmzjwZG3VMyUrIvi9CKg4zIW9RTwf5fTa9-/exec'
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxMneoGC89RaOifSPT7FxxirJQhNl51_nhsXFRkGPs9zwJELu8ik_FVXIdKejBsLLFn/exec'
 
 interface Props {
   data: Invitation
