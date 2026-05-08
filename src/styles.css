@@ -275,7 +275,7 @@ section.reveal {
   line-height: 0.85;
   text-align: right;
   padding-right: 10%;
-  margin: 0 0 -0.12em 0; /* притягиваем следующую строку */
+  margin: 0 0 -0.35em 0; /* притягиваем следующую строку */
 }
 
 /* Қыз ұзату — больше, левее */
@@ -428,7 +428,7 @@ section.reveal {
 
 .schedule-date {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(22px, 7vw, 40px);
+  font-size: clamp(22px, 7vw, 30px);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--gold);
@@ -467,10 +467,10 @@ section.reveal {
   content: '';
   position: absolute;
   left: 50%;
-  top: 16px;
-  bottom: 16px;
+  top: 0;
+  bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, var(--gold) 0%, var(--gold-2) 60%, transparent 100%);
+  background: linear-gradient(to bottom, transparent 0%, var(--gold) 8%, var(--gold-2) 60%, transparent 100%);
   opacity: 0.55;
   transform: translateX(-50%);
   z-index: 0;
@@ -481,7 +481,7 @@ section.reveal {
   grid-template-columns: 1fr 20px 1fr;
   align-items: center;
   column-gap: 16px;
-  padding: 4px 0;
+  padding: 24px 0;
   position: relative;
   z-index: 1;
 }
@@ -529,7 +529,7 @@ section.reveal {
 /* Время (крупный) */
 .schedule-time {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(42px, 11vw, 64px);
+  font-size: clamp(42px, 11vw, 48px);
   font-weight: 600;
   color: var(--rose);
   letter-spacing: 0.02em;
