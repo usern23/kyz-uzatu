@@ -743,7 +743,7 @@ section.reveal {
 .field span {
   display: block;
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(16px, 4vw, 20px); letter-spacing: 0.1em;
+  font-size: clamp(13px, 3.5vw, 16px); letter-spacing: 0.1em;
   color: var(--gold);
   font-weight: 500;
   margin-bottom: 10px;
@@ -757,7 +757,7 @@ section.reveal {
   border-bottom: 1px solid var(--gold);
   background: transparent;
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(20px, 5vw, 26px);
+  font-size: clamp(16px, 4.5vw, 20px);
   color: var(--rose);
   border-radius: 0;
   outline: none;
@@ -784,7 +784,7 @@ section.reveal {
 .rsvp-radio-field legend {
   display: block;
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(16px, 4vw, 22px);
+  font-size: clamp(13px, 3.5vw, 16px);
   letter-spacing: 0.15em;
   color: var(--gold);
   font-weight: 500;
@@ -827,7 +827,7 @@ section.reveal {
 }
 .rsvp-radio-label {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(22px, 5.5vw, 28px);
+  font-size: clamp(17px, 4.5vw, 21px);
   color: var(--rose);
   letter-spacing: 0.03em;
 }
@@ -855,7 +855,7 @@ section.reveal {
   color: var(--beige);
   border: 0;
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(18px, 4.5vw, 22px);
+  font-size: clamp(16px, 4vw, 19px);
   letter-spacing: 0.3em;
   text-transform: uppercase;
   cursor: pointer;
