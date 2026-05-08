@@ -653,7 +653,7 @@ section.reveal {
 }
 .venue-lines {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 24px;
+  font-size: clamp(26px, 6.5vw, 34px);
   color: var(--rose);
   line-height: 1.5;
   margin-bottom: 22px;
@@ -730,7 +730,7 @@ section.reveal {
 .rsvp { padding-top: 36px; }
 .rsvp-deadline {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 22px;
+  font-size: clamp(24px, 6vw, 32px);
   color: var(--rose);
   max-width: 440px;
   margin: 0 auto 26px;
@@ -743,7 +743,7 @@ section.reveal {
 .field span {
   display: block;
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 13px; letter-spacing: 0.15em;
+  font-size: clamp(16px, 4vw, 20px); letter-spacing: 0.1em;
   color: var(--gold);
   font-weight: 500;
   margin-bottom: 10px;
@@ -757,7 +757,7 @@ section.reveal {
   border-bottom: 1px solid var(--gold);
   background: transparent;
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 17px;
+  font-size: clamp(20px, 5vw, 26px);
   color: var(--rose);
   border-radius: 0;
   outline: none;
