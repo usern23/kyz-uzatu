@@ -358,7 +358,7 @@ section.reveal {
 .uptitle {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
   letter-spacing: 0.18em;
-  font-size: 18px;
+  font-size: clamp(22px, 5.5vw, 28px);
   color: var(--gold);
   margin-bottom: 14px;
   font-weight: 400;
@@ -441,7 +441,7 @@ section.reveal {
 
 .schedule-date {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(22px, 7vw, 30px);
+  font-size: clamp(28px, 7.5vw, 38px);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--gold);
@@ -554,7 +554,7 @@ section.reveal {
 /* Описание под временем */
 .schedule-desc {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(17px, 5vw, 24px);
+  font-size: clamp(22px, 5.5vw, 28px);
   font-weight: 500;
   color: var(--rose);
   letter-spacing: 0.1em;
@@ -645,7 +645,7 @@ section.reveal {
 .venue { padding-top: 30px; }
 .venue-label {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 19px;
+  font-size: clamp(22px, 5.5vw, 28px);
   color: var(--gold);
   letter-spacing: 0.12em;
   margin-bottom: 14px;
@@ -686,7 +686,7 @@ section.reveal {
 .dresscode { padding-top: 30px; }
 .dc-text {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 22px;
+  font-size: clamp(24px, 6vw, 32px);
   color: var(--rose);
   max-width: 440px;
   margin: 0 auto 24px;
@@ -708,7 +708,7 @@ section.reveal {
 .hosts-section { padding-top: 30px; padding-bottom: 30px; }
 .hosts-label {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 19px;
+  font-size: clamp(22px, 5.5vw, 28px);
   color: var(--gold);
   letter-spacing: 0.12em;
   margin-bottom: 12px;
@@ -784,7 +784,7 @@ section.reveal {
 .rsvp-radio-field legend {
   display: block;
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 13px;
+  font-size: clamp(16px, 4vw, 22px);
   letter-spacing: 0.15em;
   color: var(--gold);
   font-weight: 500;
@@ -827,7 +827,7 @@ section.reveal {
 }
 .rsvp-radio-label {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 18px;
+  font-size: clamp(22px, 5.5vw, 28px);
   color: var(--rose);
   letter-spacing: 0.03em;
 }
@@ -855,7 +855,7 @@ section.reveal {
   color: var(--beige);
   border: 0;
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 14px;
+  font-size: clamp(18px, 4.5vw, 22px);
   letter-spacing: 0.3em;
   text-transform: uppercase;
   cursor: pointer;
@@ -877,7 +877,7 @@ section.reveal {
 }
 .rsvp-thanks p {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 18px;
+  font-size: clamp(22px, 5.5vw, 28px);
   color: var(--rose);
 }
 
@@ -885,7 +885,7 @@ section.reveal {
 .contacts { padding-top: 36px; padding-bottom: 50px; }
 .contacts-label {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: 22px;
+  font-size: clamp(24px, 6vw, 32px);
   color: var(--gold);
   letter-spacing: 0.08em;
   margin-bottom: 18px;
@@ -913,7 +913,7 @@ section.reveal {
 }
 .contact-pill .ci { display: flex; color: var(--gold); }
 .contact-pill:hover .ci { color: var(--gold-2); }
-.contact-pill .cv { font-size: 17px; letter-spacing: 0.05em; }
+.contact-pill .cv { font-size: clamp(20px, 5vw, 26px); letter-spacing: 0.05em; }
 
 /* ============ Footer ============ */
 .footer {
