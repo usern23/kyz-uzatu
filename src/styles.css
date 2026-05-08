@@ -29,7 +29,7 @@
 html, body { background: var(--paper); }
 
 body {
-  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-weight: 400;
   color: var(--rose);
   -webkit-font-smoothing: antialiased;
@@ -240,7 +240,7 @@ section.reveal {
   position: absolute;
   top: 2.5%; left: 4%;
   z-index: 5;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   letter-spacing: 0.45em;
   text-transform: uppercase;
   font-size: clamp(9px, 2.2vw, 12px);
@@ -281,7 +281,7 @@ section.reveal {
 /* Қыз ұзату — больше, левее */
 .kyz-uzatu-line {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(52px, 23vw, 100px);
+  font-size: clamp(52px, 20vw, 75px);
   font-weight: 500;
   color: var(--rose);
   line-height: 0.9;
@@ -298,7 +298,7 @@ section.reveal {
     margin: 0 0 -0.25em 0;
   }
   .kyz-uzatu-line {
-    font-size: clamp(60px, 20vw, 80px);
+    font-size: clamp(40px, 18vw, 60px);
     padding-left: 10%;
   }
 }
@@ -316,7 +316,7 @@ section.reveal {
 .hero-divider svg { width: 10px; height: 10px; flex-shrink: 0; }
 
 .hero-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: clamp(11px, 3vw, 17px);
   letter-spacing: 0.35em;
   text-transform: uppercase;
@@ -356,7 +356,7 @@ section.reveal {
 .section + .section { padding-top: 24px; }
 
 .uptitle {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   letter-spacing: 0.18em;
   font-size: 18px;
   color: var(--gold);
@@ -374,7 +374,7 @@ section.reveal {
 }
 
 .body-text {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-style: normal;
   font-size: 22px;
   line-height: 1.55;
@@ -440,7 +440,7 @@ section.reveal {
 }
 
 .schedule-date {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: clamp(22px, 7vw, 30px);
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -541,7 +541,7 @@ section.reveal {
 
 /* Время (крупный) */
 .schedule-time {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: clamp(42px, 11vw, 48px);
   font-weight: 600;
   color: var(--rose);
@@ -553,7 +553,7 @@ section.reveal {
 
 /* Описание под временем */
 .schedule-desc {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: clamp(17px, 5vw, 24px);
   font-weight: 500;
   color: var(--rose);
@@ -566,7 +566,7 @@ section.reveal {
 
 /* ════ Старый event-date (оставлен как fallback) ════ */
 .event-date {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 24px;
   color: var(--rose);
   letter-spacing: 0.05em;
@@ -603,7 +603,7 @@ section.reveal {
   gap: 4px;
 }
 .cal-wd {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 13px;
   letter-spacing: 0.15em;
   color: var(--gold);
@@ -613,7 +613,7 @@ section.reveal {
 .cal-cell {
   aspect-ratio: 1;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 24px;
   color: var(--gold);
   font-weight: 400;
@@ -644,7 +644,7 @@ section.reveal {
 /* ============ Venue ============ */
 .venue { padding-top: 30px; }
 .venue-label {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 19px;
   color: var(--gold);
   letter-spacing: 0.12em;
@@ -652,7 +652,7 @@ section.reveal {
   font-weight: 400;
 }
 .venue-lines {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 24px;
   color: var(--rose);
   line-height: 1.5;
@@ -670,7 +670,7 @@ section.reveal {
   border-radius: 50px;
   color: var(--rose);
   text-decoration: none;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 15px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -685,7 +685,7 @@ section.reveal {
 /* ============ DressCode ============ */
 .dresscode { padding-top: 30px; }
 .dc-text {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 22px;
   color: var(--rose);
   max-width: 440px;
@@ -707,7 +707,7 @@ section.reveal {
 /* ============ Hosts ============ */
 .hosts-section { padding-top: 30px; padding-bottom: 30px; }
 .hosts-label {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 19px;
   color: var(--gold);
   letter-spacing: 0.12em;
@@ -729,7 +729,7 @@ section.reveal {
 /* ============ RSVP ============ */
 .rsvp { padding-top: 36px; }
 .rsvp-deadline {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 22px;
   color: var(--rose);
   max-width: 440px;
@@ -742,7 +742,7 @@ section.reveal {
 .field { display: block; margin-bottom: 28px; }
 .field span {
   display: block;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 13px; letter-spacing: 0.15em;
   color: var(--gold);
   font-weight: 500;
@@ -756,7 +756,7 @@ section.reveal {
   border: none;
   border-bottom: 1px solid var(--gold);
   background: transparent;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 17px;
   color: var(--rose);
   border-radius: 0;
@@ -783,7 +783,7 @@ section.reveal {
 }
 .rsvp-radio-field legend {
   display: block;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 13px;
   letter-spacing: 0.15em;
   color: var(--gold);
@@ -826,7 +826,7 @@ section.reveal {
   opacity: 1;
 }
 .rsvp-radio-label {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 18px;
   color: var(--rose);
   letter-spacing: 0.03em;
@@ -854,7 +854,7 @@ section.reveal {
   background: var(--rose);
   color: var(--beige);
   border: 0;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 14px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -876,7 +876,7 @@ section.reveal {
   margin-bottom: 10px;
 }
 .rsvp-thanks p {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 18px;
   color: var(--rose);
 }
@@ -884,7 +884,7 @@ section.reveal {
 /* ============ Contacts ============ */
 .contacts { padding-top: 36px; padding-bottom: 50px; }
 .contacts-label {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 22px;
   color: var(--gold);
   letter-spacing: 0.08em;
@@ -905,7 +905,7 @@ section.reveal {
   color: var(--rose);
   transition: all .25s ease;
   background: transparent;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
 }
 .contact-pill:hover {
   background: var(--rose); color: var(--beige);
@@ -945,7 +945,7 @@ section.reveal {
 }
 .footer-orn img { width: 100%; height: 100%; object-fit: contain; }
 .footer-tagline {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 11px;
   letter-spacing: 0.35em;
   text-transform: uppercase;
@@ -953,7 +953,7 @@ section.reveal {
   margin-bottom: 8px;
 }
 .footer-brand {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-size: 15px;
   letter-spacing: 0.3em;
   text-transform: uppercase;

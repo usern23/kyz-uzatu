@@ -19,7 +19,7 @@ export default function Invite({ data }: Props) {
           <div className="schedule-item schedule-item--left">
             <div className="schedule-content">
               <div className="schedule-time">14:30</div>
-              <div className="schedule-desc">Сбор</div>
+              <div className="schedule-desc">Сбор гостей</div>
             </div>
             <div className="schedule-dot" />
             <div className="schedule-spacer" />
