@@ -260,7 +260,7 @@ section.reveal {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  padding: 8% 0 12%;
+  padding: 100% 0 0%;
   box-sizing: border-box;
   pointer-events: none;
 }
@@ -269,24 +269,24 @@ section.reveal {
 
 .bride-name {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(62px, 21vw, 155px);
+  font-size: clamp(52px, 23vw, 100px);
   font-weight: 500;
   color: var(--rose);
   line-height: 0.85;
   text-align: right;
-  padding-right: 6%;
-  margin: 0;
+  padding-right: 10%;
+  margin: 0 0 -0.12em 0; /* притягиваем следующую строку */
 }
 
 /* Қыз ұзату — больше, левее */
 .kyz-uzatu-line {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
-  font-size: clamp(52px, 23vw, 170px);
+  font-size: clamp(52px, 23vw, 100px);
   font-weight: 500;
   color: var(--rose);
-  line-height: 1;
+  line-height: 0.9;
   text-align: left;
-  padding-left: 3%;
+  padding-left: 15%;
   margin: 0;
 }
 
@@ -437,6 +437,8 @@ section.reveal {
   display: inline-block;
   padding: 0 18px;
   font-weight: 600;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
 }
 .schedule-date::before,
 .schedule-date::after {
@@ -532,15 +534,18 @@ section.reveal {
   color: var(--rose);
   letter-spacing: 0.02em;
   line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
 }
 
 /* Описание под временем */
 .schedule-desc {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(12px, 3.2vw, 15px);
+  font-size: clamp(17px, 5vw, 24px);
+  font-weight: 500;
   color: var(--rose);
-  letter-spacing: 0.06em;
-  opacity: 0.7;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
   line-height: 1.2;
   margin-top: 2px;
   white-space: nowrap;
