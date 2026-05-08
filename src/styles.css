@@ -197,7 +197,7 @@ section.reveal {
   object-fit: cover; /* заполняет контейнер с сохранением пропорций, сверху */
   object-position: center top;
   filter: contrast(1.05) saturate(1.06);
-  transform: scale(1.18);
+  transform: scale(1.1);
   transform-origin: center top;
 }
 /* плавный fade снизу — начинается от уровня текста, к дуге = цвет фона */
