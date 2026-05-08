@@ -376,7 +376,7 @@ section.reveal {
 .body-text {
   font-family: 'KZCarolina', 'Great Vibes', cursive;
   font-style: normal;
-  font-size: 22px;
+  font-size: clamp(24px, 6vw, 32px);
   line-height: 1.55;
   color: var(--rose);
   max-width: 460px;
