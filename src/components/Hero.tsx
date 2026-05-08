@@ -15,7 +15,7 @@ export default function Hero({ data }: Props) {
         <p className="hero-kicker">Қыз ұзату</p>
 
         <div className="hero-photo" aria-hidden="true">
-          <img src={`${import.meta.env.BASE_URL}img/tilda/bride-saukele.jpg`} alt="" />
+          <img src={`${import.meta.env.BASE_URL}img/tilda/bride-hero.jpg`} alt="" />
         </div>
 
         <div className="hero-text">
