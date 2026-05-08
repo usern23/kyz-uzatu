@@ -19,7 +19,7 @@ export default function Invite({ data }: Props) {
           <div className="schedule-item schedule-item--left">
             <div className="schedule-content">
               <div className="schedule-time">14:30</div>
-              <div className="schedule-desc">Қонақтарды қабылдау</div>
+              <div className="schedule-desc">Сбор</div>
             </div>
             <div className="schedule-dot" />
             <div className="schedule-spacer" />
@@ -31,7 +31,7 @@ export default function Invite({ data }: Props) {
             <div className="schedule-dot schedule-dot--main" />
             <div className="schedule-content">
               <div className="schedule-time">15:00</div>
-              <div className="schedule-desc">Той басталады</div>
+              <div className="schedule-desc">Начало</div>
             </div>
           </div>
 
