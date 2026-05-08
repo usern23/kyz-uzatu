@@ -504,6 +504,7 @@ section.reveal {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  min-width: 0; /* не даём содержимому расталкивать 1fr-колонку */
 }
 .schedule-item--left .schedule-content {
   text-align: right;
