@@ -11,13 +11,13 @@ interface Props {
 export default function Rsvp({ data }: Props) {
   const [name, setName] = useState('')
   const [partner, setPartner] = useState('')
-  const [answer, setAnswer] = useState('yes')
+  const [answer, setAnswer] = useState('')
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!name.trim() || sending) return
+    if (!name.trim() || !answer || sending) return
     setSending(true)
     try {
       await fetch(SHEETS_URL, {
@@ -96,7 +96,7 @@ export default function Rsvp({ data }: Props) {
           </div>
 
           <button className="btn-primary" type="submit" disabled={sending}>
-            {sending ? 'Жіберілуде…' : 'Растау'}
+            {sending ? 'Жіберілуде…' : 'Отправить'}
           </button>
         </form>
       ) : (
