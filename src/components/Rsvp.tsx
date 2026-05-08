@@ -75,23 +75,25 @@ export default function Rsvp({ data }: Props) {
                 name="rsvp-answer"
                 value="no"
                 checked={answer === 'no'}
-                onChange={() => setAnswer('no')}
+                onChange={() => { setAnswer('no'); setPartner(''); }}
               />
               <span className="rsvp-radio-circle" />
               <span className="rsvp-radio-label">к сожалению, не смогу</span>
             </label>
           </fieldset>
 
-          {/* Имя партнёра */}
-          <label className="field">
-            <span>Если вы будете с парой, укажите его/её имя</span>
-            <input
-              type="text"
-              value={partner}
-              onChange={(e) => setPartner(e.target.value)}
-              placeholder="Анастасия Иванова"
-            />
-          </label>
+          {/* Имя партнёра — только если пришли */}
+          <div className={`partner-field-wrap${answer === 'yes' ? ' partner-field-wrap--visible' : ''}`}>
+            <label className="field">
+              <span>Если вы будете с парой, укажите его/её имя</span>
+              <input
+                type="text"
+                value={partner}
+                onChange={(e) => setPartner(e.target.value)}
+                placeholder="Анастасия Иванова"
+              />
+            </label>
+          </div>
 
           <button className="btn-primary" type="submit" disabled={sending}>
             {sending ? 'Жіберілуде…' : 'Растау'}
