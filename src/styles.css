@@ -290,6 +290,19 @@ section.reveal {
   margin: 0;
 }
 
+/* Адаптив: на телефонах уменьшаем шрифт героя чтобы текст влезал */
+@media (max-width: 559px) {
+  .bride-name {
+    font-size: clamp(40px, 13.5vw, 56px);
+    padding-right: 6%;
+    margin: 0 0 -0.25em 0;
+  }
+  .kyz-uzatu-line {
+    font-size: clamp(40px, 13.5vw, 56px);
+    padding-left: 10%;
+  }
+}
+
 .hero-divider {
   display: flex; align-items: center; justify-content: center;
   gap: 8px; margin: 4px auto;
